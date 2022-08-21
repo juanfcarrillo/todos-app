@@ -1,0 +1,129 @@
+button{
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 16px;
+}
+li{
+    list-style: none;
+    cursor: pointer;
+}
+.container{
+    padding: 20px;
+    height: 100%;
+}
+.nav-bar{
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: var(--font-color);
+    color: var(--bg-color);
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    width: 50px;
+    margin: 0;
+    padding: 0;
+}
+.nav-elem{
+    color: var(--bg-color);
+    font-weight: 600;
+}
+.v-center{
+    display: flex;
+    align-items: center;
+}
+.h-center{
+    display: flex;
+    justify-content: center;
+}
+.icon{
+    width: 3em;
+    height: 3em;
+}
+.s-icon{
+    width: 20px;
+    height: 20px;
+}
+.f-rr{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.f{
+    display: flex;
+}
+.button{
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.shadow{
+    box-shadow: 0px 5px 15px 0px var(--font-color);
+}
+.border{
+    border: 2px var(--font-color) solid;
+    border-radius: 5px;
+}
+.mg-tp{
+    margin-top: 15px;
+}
+.container-todos{
+    max-width: 800px;
+    min-width: 375px;
+}
+.ola{
+    width: 300px;
+}
+.todo-elem{
+    color: #444;
+    font-size: 18px;
+    font-weight: 600;
+}
+.p-1{
+    padding: 10px;
+}
+.g-1{
+    gap: 5px;
+}
+.g-2{
+    gap: 10px;
+}
+.g-5{
+    gap: 30px;
+}
+.icon-container{
+    min-width: 20px;
+}
+.hidden{
+    display: none;
+}
+.p-r{
+    position: relative;
+}
+.pop-up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    z-index: 1001;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.pop-up-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    overflow: auto;
+    background: rgba(0, 0, 0, .1);
+}
+.pop-up-input{
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px var(--font-color) solid;
+    border-radius: 5px;
+}
