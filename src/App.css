@@ -55,6 +55,9 @@ h1, h2 {
 .f{
     display: flex;
 }
+.w-100{
+    width: 100%;
+}
 .button{
     padding: 10px 15px;
     cursor: pointer;
@@ -135,4 +138,8 @@ h1, h2 {
     font-weight: 600;
     border: 2px var(--font-color) solid;
     border-radius: 5px;
+}
+.link{
+    cursor: pointer;
+    text-decoration: none;
 }

@@ -14,7 +14,7 @@ const FormPopUpEdit = ({exitForm, id, ...props}) => {
   return(
     <>
       <div className="pop-up-background" onClick={exitForm}/>
-      <FormTodoBase exitForm={exitForm} inputContent={props.content}>
+      <FormTodoBase exitForm={exitForm} inputContent={props.content} id={id}>
           <button className="button shadow border" onClick={() => handleDelete({id})}><FiTrash/></button>
       </FormTodoBase>
     </>
