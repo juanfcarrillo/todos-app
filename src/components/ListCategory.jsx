@@ -1,8 +1,7 @@
-import React from "react";
-import AddTodo from "./AddTodo";
-import FormTodoPopUp from "./FormTodoPopUp/FormTodoPopUp";
+import React, { useState, useRef } from "react";
+import AddTodo from "./AddCategory";
+import FormTodoPopUp from "./FormTodoPopUp/PopUpAdd/FormTodoPopUp";
 import Categories from "./Categories/Categories";
-import { useState, useRef } from "react";
 
 const ListTodo = () => {
 
@@ -21,7 +20,6 @@ const ListTodo = () => {
   return (
     <div className="container container-todos">
       {showElements.formTodo && <FormTodoPopUp exitForm={hideForm}/>}
-
       <AddTodo handleAddButton={handleAddButton}/>
       <Categories/>
       

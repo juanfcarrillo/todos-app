@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { collection, addDoc, doc, updateDoc} from "firebase/firestore";
 
 import firestore from "../../services/firebase";
 
-const FormTodoBase = ({ children, exitForm, id }) => {
+const FormTodoBase = ({ children, exitForm, id , ...props}) => {
+
   const [formValues, setFormValues] = useState({
-    categoryName: "",
+    categoryName: props.inputContent ? props.inputContent: "",
   })
 
   const handleSubmit = async (e) => {
@@ -40,6 +41,12 @@ const FormTodoBase = ({ children, exitForm, id }) => {
     })
   }
 
+  const refInputName = useRef()
+
+  useEffect(() => {
+    refInputName.current.focus()
+  }, [])
+
   return (
     <form onSubmit={handleSubmit} className="pop-up g-2">
       <div className="f g-1">
@@ -49,6 +56,8 @@ const FormTodoBase = ({ children, exitForm, id }) => {
           onChange={handleChange}
           autoComplete="off"
           className="pop-up-input shadow"
+          value={formValues["categoryName"]}
+          ref={refInputName}
         />
         <button className="button shadow border">Aceptar</button>
       </div>

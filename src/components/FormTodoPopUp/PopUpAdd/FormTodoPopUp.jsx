@@ -1,5 +1,5 @@
 import { useState } from "react"
-import FormTodoBase from "./FormTodoBase"
+import FormTodoBase from "../FormTodoBase"
 
 const FormTodoPopUp = ({exitForm}) => {
   

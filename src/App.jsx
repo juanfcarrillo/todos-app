@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import NavBar from './components/NavBar'
 import {Route, Routes} from "react-router-dom"
-import ListTodo from "./components/ListTodo"
+import ListTodo from "./components/ListCategory"
 
 
 import './App.css'
