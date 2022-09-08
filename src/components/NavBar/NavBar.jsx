@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
 
-const NavBar = () => {
+export const NavBar = () => {
   return (
     <nav className="container nav-bar flex p-r">
       <AiOutlineHeart fill="#f0eff5" className="icon" />
@@ -17,4 +17,3 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;

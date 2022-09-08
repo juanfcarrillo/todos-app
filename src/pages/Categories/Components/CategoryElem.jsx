@@ -3,7 +3,7 @@ import { AiFillEdit } from "react-icons/ai";
 import { useState } from "react";
 
 
-const CategoryElem = ({ children, id, openForm, content }) => {
+export const CategoryElem = ({ children, id, openForm, content }) => {
 
   return (
     <div className="v-center flex p-1 g-5 border mg-tp shadow">
@@ -23,4 +23,3 @@ const CategoryElem = ({ children, id, openForm, content }) => {
   );
 };
 
-export default CategoryElem;
