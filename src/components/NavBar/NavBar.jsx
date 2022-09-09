@@ -9,7 +9,7 @@ export const NavBar = () => {
       <ul className="rigth v-center">
         <li>
           <Link to="/" className="nav-elem">
-            TODOS
+            CATEGORIES
           </Link>
         </li>
       </ul>

@@ -1,12 +1,9 @@
-import { collection, addDoc, doc} from "firebase/firestore";
-import firestore from "../firebase";
+import { addDoc } from "firebase/firestore";
+import { categoryCollection } from "./categoryCollection";
 
 export const addCategory = async ({content}) => {
 
-    const collectionName = 'categories'
-
-    const categoryCollection = collection(firestore, collectionName)
-    const docRef = await addDoc(categoryCollection, {
+    await addDoc(categoryCollection, {
         content
     })
 

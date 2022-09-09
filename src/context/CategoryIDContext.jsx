@@ -1,18 +1,16 @@
 import { createContext } from "react"
 
-export const CategoryID = createContext()
+export const CategoryIDContext = createContext()
 
-const CategoryIDContext = ({children, id}) => {
+export const CategoryIDProvider = ({children, id}) => {
 
     const value = {
-        id
+        CategoryID : id
     }
 
     return(
-        <CategoryID.Provider value={{value}}>
+        <CategoryIDContext.Provider value={value}>
             {children}
-        </CategoryID.Provider>
+        </CategoryIDContext.Provider>
     )
 }
-
-export default CategoryIDContext

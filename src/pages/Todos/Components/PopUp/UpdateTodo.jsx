@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { FiTrash } from 'react-icons/fi'
 import PopUp from "../../../../components/PopUp/PopUp";
 import { updateCategory, deleteCategory } from "../../../../services/Categories";
+import { deleteTodo, updateTodo } from "../../../../services/Todos";
 
 
 export const UpdateTodo = ({id, content, exitForm, ...props }) => {
@@ -12,13 +13,15 @@ export const UpdateTodo = ({id, content, exitForm, ...props }) => {
 
     if (contentValue.trim() !== "") {
       exitForm();
-      updateCategory({id, content: contentValue });
+      updateTodo(id, {
+        content: contentValue
+      });
     }
   };
 
   const handleDelete = () => {
     exitForm()
-    deleteCategory({id})
+    deleteTodo(id)
   }
 
   const handleContentChange = (e) => {

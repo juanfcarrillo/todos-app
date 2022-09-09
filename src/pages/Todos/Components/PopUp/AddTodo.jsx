@@ -1,16 +1,20 @@
+import { useContext } from "react";
 import { useEffect, useRef, useState } from "react";
 import PopUp from "../../../../components/PopUp/PopUp";
-import { addCategory } from "../../../../services/Categories";
+import { addTodo } from "../../../../services";
+import { CategoryIDContext } from "../../../../context";
 
 export const AddTodo = ({ children, exitForm, ...props }) => {
   const [contentValue, setContentValue] = useState("");
+
+  const { CategoryID } = useContext(CategoryIDContext)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (contentValue.trim() !== "") {
       exitForm();
-      addCategory({ content: contentValue });
+      addTodo(contentValue, CategoryID);
     }
   };
 

@@ -6,8 +6,8 @@ export const updateCategory = async ({id, content}) => {
 
     const collectionName = 'categories'
 
-    const categoryDocument = doc(firestore, collectionName, id)
-    const docRef = await updateDoc(categoryDocument, {
+    const docRef = doc(firestore, collectionName, id)
+    await updateDoc(docRef, {
       content
     })
 }

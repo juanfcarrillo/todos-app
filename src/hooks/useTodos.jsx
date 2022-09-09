@@ -1,7 +1,6 @@
-import { useEffect } from "react";
-import { todoCollection, todosSearchQuery } from "../services/Todos";
-import { collection, query, where, onSnapshot, doc } from "firebase/firestore";
-import { useState } from "react";
+import { onSnapshot } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { todosSearchQuery } from "../services/Todos";
 
 
 export const useTodos = (categoryID) => {
@@ -18,8 +17,8 @@ export const useTodos = (categoryID) => {
             });
             return unsubscribe
         }
-        captureSnapshot()
-        return () => captureSnapshot().then((unsubscribe) => unsubscribe())
+        const snap = captureSnapshot()
+        return () => snap.then((unsubscribe) => unsubscribe())
     }, [])
 
     return { snapshot, loading }

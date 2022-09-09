@@ -1,17 +1,34 @@
 import { useParams } from "react-router-dom"
-import CategoryIDContext from "../../context/CategoryIDContext"
 import { TodosList } from "./Components"
+import { CategoryIDProvider } from "../../context"
+import { useState } from "react"
+import { AddButton } from "../../components"
+import { AddTodo } from "./Components"
 
 export const TodoPage = () => {
 
     const { categoryID } = useParams()
 
+    const [showElements, setShowElements] = useState({
+        formTodo: false
+      })
+    
+    const handleAddButton = () => {
+      setShowElements((showElements) => {return {...showElements, formTodo: true}})
+    }
+    
+    const exitForm = () => {
+      setShowElements((showElements) => {return {...showElements, formTodo: false}})
+    }
+
     return(
-        <CategoryIDContext id={categoryID}>
+        <CategoryIDProvider id={categoryID}>
             <div className="container container-todos">
+            {showElements.formTodo && <AddTodo exitForm={exitForm}/>}
+            <AddButton handleAddButton={handleAddButton}/>
                 <TodosList/>
             </div>
-        </CategoryIDContext>
+        </CategoryIDProvider>
     )
 }
 
