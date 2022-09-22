@@ -1,4 +1,4 @@
+export * from './Components/CheckBox';
 export * from './Components/PopUp';
 export * from './Components';
-export * from './TodoPage';
-export * from './index';
+export { default as TodoPage } from './TodoPage';

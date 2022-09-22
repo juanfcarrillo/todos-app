@@ -5,7 +5,7 @@ import { useState } from "react"
 import { AddButton } from "../../components"
 import { AddTodo } from "./Components"
 
-export const TodoPage = () => {
+const TodoPage = () => {
 
     const { categoryID } = useParams()
 
@@ -32,3 +32,4 @@ export const TodoPage = () => {
     )
 }
 
+export default TodoPage

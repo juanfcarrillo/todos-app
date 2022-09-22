@@ -1,5 +1,8 @@
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import { CategoryPage, TodoPage } from "../pages";
+import { CategoryPage } from "../pages";
+
+const TodoPage = lazy(() => import('../pages/Todos/TodoPage'))
 
 export const MainRouter = () => {
   return (

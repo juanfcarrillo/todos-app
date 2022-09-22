@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { Suspense } from 'react'
 import { MainRouter } from './router/MainRouter'
-import { NavBar } from './components'
+import { HorizontalLoader, NavBar } from './components'
+
 
 import './App.css'
 
@@ -9,7 +10,9 @@ function App() {
   return (
     <>
       <NavBar/>
-      <MainRouter/>
+      <Suspense fallback={<HorizontalLoader/>}>
+        <MainRouter/>
+      </Suspense>
     </>
   )
 }
